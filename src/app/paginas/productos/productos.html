@@ -1,1 +1,31 @@
-<p>productos works!</p>
+<div class="container">
+
+   <!-- <div class="row"> -->
+    @for(p of Productos;track p.id){
+
+    @if(p.disponibilidad){
+
+    <div class="card col-4 m-4">
+      <img src="{{p.imagen}}" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5>{{p.nombre}}</h5>
+
+        <p>${{p.precio}}</p>
+
+        <p>{{p.descripcion}}</p>
+
+
+        
+        <a routerLink='/Carrito' class="btn btn-primary">
+         Comprar
+        </a>
+      </div>
+    </div>
+
+    }
+
+    }
+  <!-- </div> -->
+
+</div>

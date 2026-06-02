@@ -1,0 +1,86 @@
+ /*SECCION CARRITO 
+.carrito {
+  background: linear-gradient(to bottom, #fff5f7, #ffe4ec);
+  min-height: 100vh;
+}
+
+ CARD 
+.carrito-card {
+  border: none;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  background: white;
+}
+
+.carrito-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+ IMAGEN 
+.carrito-card img {
+  height: 350px;
+  object-fit: cover;
+}
+
+PRECIO 
+.precio {
+  color: #e98dbe;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+TOTAL 
+.total-carrito {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.total-carrito span {
+  color: #f79bcc;
+}
+
+ BOTON ROSA 
+.btn-pink {
+  background: linear-gradient(45deg, #df86b5, #df86b5);
+  color: white;
+  border-radius: 30px;
+  padding: 12px 30px;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-pink:hover {
+  background: linear-gradient(45deg, #ff1493, #c71585);
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+
+  .carrito-card img {
+    height: 250px;
+  }
+
+}*/
+
+
+.container {
+  background: linear-gradient(to right, #fff0f5, #ffe4e9);
+  
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+
+  
+}

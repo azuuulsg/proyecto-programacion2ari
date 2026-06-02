@@ -1,0 +1,81 @@
+/* OFERTAS */
+.ofertas {
+  background: linear-gradient(to bottom, #fff5f7, #ffe4ec);
+}
+
+/* CARD OFERTA */
+.oferta-card {
+  border: none;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.4s ease;
+  background-color: white;
+}
+
+.oferta-card:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
+/* IMAGEN */
+.oferta-card img {
+  height: 350px;
+  object-fit: cover;
+}
+
+/* BADGE DESCUENTO */
+.badge-oferta {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #e77cb5;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* PRECIOS */
+.precio {
+  margin: 15px 0;
+}
+
+.precio-viejo {
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.precio-nuevo {
+  color: #e287b8;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* BOTON */
+.btn-pink {
+  background: linear-gradient(45deg, #db8fb7, #db8fb7);
+  color: white;
+  border-radius: 30px;
+  padding: 10px 25px;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-pink:hover {
+  background: linear-gradient(45deg, #ff1493, #c71585);
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .oferta-card img {
+    height: 250px;
+  }
+
+}

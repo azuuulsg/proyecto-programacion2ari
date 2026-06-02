@@ -1,0 +1,37 @@
+/* SECCION CONTACTO */
+.contacto {
+  background: linear-gradient(to right, #fff0f5, #ffe4e9);
+}
+
+/* TARJETA INFO */
+.contact-info {
+  background: white;
+  border-radius: 20px;
+}
+
+.contact-info h5 {
+  color: #ff69b4;
+}
+
+/* FORMULARIO */
+.contact-form {
+  background: white;
+  border-radius: 20px;
+}
+
+/* INPUTS */
+.contact-form .form-control {
+  border-radius: 10px;
+  border: 1px solid #ffc0cb;
+}
+
+.contact-form .form-control:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 6px rgba(255,105,180,0.4);
+}
+
+/* TEXTO */
+.contact-info p {
+  margin-bottom: 8px;
+  color: #555;
+}

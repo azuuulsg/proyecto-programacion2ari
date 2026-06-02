@@ -1,0 +1,80 @@
+/* ESTILOS GENERALES */
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: #fff5f7;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(255,192,203,0.5), rgba(255,182,193,0.6)),
+              url('https://via.placeholder.com/1200x800');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+/* BOTONES */
+.btn-pink {
+  background: linear-gradient(45deg, #ff69b4, #ff1493);
+  color: white;
+  border-radius: 30px;
+  padding: 10px 25px;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-pink:hover {
+  background: linear-gradient(45deg, #ff1493, #c71585);
+  transform: scale(1.05);
+}
+
+/* TARJETAS */
+.card {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* SOMBRA MÁS SUAVE */
+.shadow {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+/* TITULOS */
+h1, h2, h5 {
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #ffe4e9;
+  font-size: 14px;
+  color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+    padding: 20px;
+  }
+
+  .card img {
+    height: 200px;
+  }
+}

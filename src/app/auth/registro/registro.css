@@ -1,0 +1,35 @@
+/* SECCION REGISTRO */
+.registro {
+  background-color: #fff5f7;
+}
+
+/* FORMULARIO */
+.registro-form {
+  background: white;
+  border-radius: 20px;
+}
+
+/* INPUTS */
+.registro-form .form-control {
+  border-radius: 10px;
+  border: 1px solid #ffc0cb;
+}
+
+.registro-form .form-control:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 5px rgba(255,105,180,0.5);
+}
+
+/* LABELS */
+.registro-form .form-label {
+  color: #555;
+}
+
+.btn-pink {
+  background: linear-gradient(45deg, #fdaad3, #ff8cc9);
+  color: rgb(0, 0, 0);
+  border-radius: 30px;
+  padding: 10px 25px;
+  border: none;
+  transition: 0.3s;
+}
