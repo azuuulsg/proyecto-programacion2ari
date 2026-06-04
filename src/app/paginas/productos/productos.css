@@ -1,5 +1,9 @@
 /* Contenedor */
+.productos {
+  background-color: #e4526f;
+}
 .container {
+   
     display: flex;
     flex-wrap: wrap;
     /* permite que bajen si no entran */
@@ -7,7 +11,22 @@
     /* espacio entre cards */
     justify-content: center;
     padding: 20px;
+    
 
+}
+
+.fav-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  color: #ff69b4;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 /* Card */
@@ -15,8 +34,8 @@
     width: 18rem;
 }
 
- img {
+img {
     justify-content: center;
     width: 100%;
     height: 100%;
-} 
+}

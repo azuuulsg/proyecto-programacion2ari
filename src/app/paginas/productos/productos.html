@@ -1,6 +1,8 @@
-<div class="container">
+<section class="Productos py-5">
+  <div class="container">
 
-   <!-- <div class="row"> -->
+
+    <!-- <div class="row"> -->
     @for(p of Productos;track p.id){
 
     @if(p.disponibilidad){
@@ -16,16 +18,19 @@
         <p>{{p.descripcion}}</p>
 
 
-        
+
         <a routerLink='/Carrito' class="btn btn-primary">
-         Comprar
+          Comprar
         </a>
       </div>
     </div>
 
+
+
     }
 
     }
-  <!-- </div> -->
+    <!-- </div> -->
 
-</div>
+  </div>
+</section>

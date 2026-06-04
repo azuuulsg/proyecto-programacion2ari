@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Producto } from '../../../models/productos';
 import { RouterLink } from '@angular/router';
+import { Favoritos } from '../../servicios/favoritos';
+import { Carrito } from '../../servicios/carrito';
 
 @Component({
   selector: 'app-productos',
@@ -9,6 +11,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './productos.css',
 })
 export class Productos {
+ 
   Productos: Producto[] = [
     {
       id: 1,
@@ -72,6 +75,5 @@ export class Productos {
     }
 
   ]
-
+ 
 }
-
