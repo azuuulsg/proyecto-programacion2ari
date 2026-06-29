@@ -68,19 +68,42 @@ TOTAL
 }*/
 
 
-.container {
-  background: linear-gradient(to right, #fff0f5, #ffe4e9);
+ .container {
   
+ background-color: #fff9fb;
+
+
+ }
+
+ h2 {
+   text-align: center;
+   color: #d67cab;
+   font-weight: bold;
+   margin-bottom: 30px;
+ }
+
+ table {
+   background-color: white;
+   border-radius: 20px;
+   overflow: hidden;
+ }
+
+ thead{
+  background-color: #f7c9dc;
 }
 
-h2 {
-  display: flex;
-  justify-content: center;
-  background: white;
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-
-
-  
+thead th{
+  color: #6b4a5c;
+  font-weight: bold;
 }
+
+.btn-danger{
+  background-color: #e78ab6;
+  border: none;
+  border-radius: 20px;
+}
+
+.btn-danger:hover{
+  background-color: #d96aa0;
+}
+

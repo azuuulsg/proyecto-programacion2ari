@@ -1,4 +1,3 @@
-
 <!-- REGISTRO -->
 <section class="registro py-5">
   <div class="container">
@@ -9,7 +8,9 @@
 
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form class="registro-form p-4 shadow">
+        <!--Esto crea una referencia al formulario. Es como ponerle un nombre al formulario para poder usarlo después.
+          Gracias a eso podemos hacer: click: y enviar el formulario completo a TypeScript.-->
+        <form #formRegistro class="registro-form p-4 shadow">
 
           <div class="mb-3">
             <label class="form-label">Nombre completo</label>
@@ -29,10 +30,16 @@
           <div class="mb-3">
             <label class="form-label">Confirmar contraseña</label>
             <input type="password" class="form-control" placeholder="********">
+            <!--Oculta los caracteres mientras el usuario escribe.-->
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-pink">Registrarse</button>
+            <!--"Cuando el usuario haga clic en el botón, ejecutar la función registrar()".-->
+            <button type="button" class="btn btn-pink" (click)="registrar(formRegistro)">
+
+              Registrarse
+
+            </button>
           </div>
 
         </form>
@@ -40,3 +47,11 @@
     </div>
   </div>
 </section>
+
+<!--El archivo registro.html contiene la estructura visual del formulario de registro. Utilicé Bootstrap para centrar el contenido y darle estilo.
+ El formulario tiene campos para nombre, email, contraseña y confirmar contraseña. 
+ También agregué un botón 'Registrarse' que llama a una función del archivo TypeScript.
+  Además, el formulario tiene una referencia llamada #formRegistro que permite limpiar todos los campos después de registrarse."-->
+  
+<!--Cómo se conecta registro.html con registro.ts?El botón Registrarse utiliza el evento (click) de Angular.
+ Cuando el usuario hace clic, se ejecuta la función registrar() definida en registro.ts. Además, se envía el formulario mediante la referencia #formRegistro para poder limpiarlo usando reset()."-->

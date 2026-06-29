@@ -1,50 +1,57 @@
-
 <!-- FAVORITOS -->
 <section class="favoritos py-5">
-  <div class="container text-center">
-    <h2 class="mb-4">Tus favoritos</h2>
 
-    <div class="row g-4">
+  <section class="favoritos py-5">
 
-      <!-- PRODUCTO 1 -->
-      <div class="col-md-4">
-        <div class="card shadow favorito-card">
-          <div class="fav-icon"><i class="bi bi-suit-heart"></i></div>
-          <img src="https://i.pinimg.com/736x/e4/35/2a/e4352adc5cdab695b4bda89b3664f82e.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Labial Kiko</h5>
-            <p class="card-text">$15.00</p>
-            <a href="#" class="btn btn-pink">Ver producto</a>
+    <div class="container">
+
+      <h2 class="text-center mb-4">
+        Mis Favoritos 
+      </h2>
+
+      <div class="row">
+        <!-- Recorremos el arreglo productos -->
+      <!-- Cada "p" representa un producto favorito -->
+        @for (p of productos; track p.id) {
+
+          <!-- Columna -->
+        <div class="col-md-4 mb-4">
+
+          <div class="card favorito-card">
+             <!-- Imagen del producto -->
+            <img [src]="p.imagen" class="card-img-top" alt="producto">
+
+            <div class="card-body">
+
+              <h5>{{ p.nombre }}</h5>
+
+              <p>${{ p.precio }}</p>
+
+              <p>{{ p.descripcion }}</p>
+
+              <button class="btn btn-danger" (click)="eliminarFavorito(p.id)">
+
+                 <i class="bi bi-heart"> Eliminar</i>
+
+              </button>
+
+            </div>
+
           </div>
-        </div>
-      </div>
 
-      <!-- PRODUCTO 2 -->
-      <div class="col-md-4">
-        <div class="card shadow favorito-card">
-          <div class="fav-icon"><i class="bi bi-suit-heart"></i></div>
-          <img src="https://i.pinimg.com/736x/d0/3e/a5/d03ea54e4dce667a4aa77a85cd268cbb.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Base Líquida</h5>
-            <p class="card-text">$25.00</p>
-            <a href="#" class="btn btn-pink">Ver producto</a>
-          </div>
         </div>
-      </div>
 
-      <!-- PRODUCTO 3 -->
-      <div class="col-md-4">
-        <div class="card shadow favorito-card">
-          <div class="fav-icon"><i class="bi bi-suit-heart"></i></div>
-          <img src="https://i.pinimg.com/736x/81/7a/e8/817ae8f68478cdfdb3e05cb18c8abca0.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Paleta de Sombras</h5>
-            <p class="card-text">$30.00</p>
-            <a href="#" class="btn btn-pink">Ver producto</a>
-          </div>
-        </div>
+        }
+
       </div>
 
     </div>
-  </div>
+
+  </section>
+
 </section>
+
+<!--"En este componente utilizo la estructura de control @for para recorrer el 
+arreglo de productos favoritos. Por cada producto se genera una tarjeta que muestra su imagen, 
+nombre, precio y descripción. También agregué un botón para eliminar productos de favoritos, que 
+ejecuta el método eliminarFavorito() enviando el id del producto seleccionado."-->

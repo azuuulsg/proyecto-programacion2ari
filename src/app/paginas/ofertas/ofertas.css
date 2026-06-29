@@ -11,6 +11,11 @@
   position: relative;
   transition: 0.4s ease;
   background-color: white;
+
+  max-width: 350px;
+  margin: auto;
+
+  
 }
 
 .oferta-card:hover {
@@ -19,7 +24,7 @@
 
 /* IMAGEN */
 .oferta-card img {
-  height: 350px;
+  height: 220px;
   object-fit: cover;
 }
 
@@ -35,7 +40,7 @@
   font-size: 14px;
   font-weight: bold;
   z-index: 10;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* PRECIOS */
@@ -71,6 +76,10 @@
   transform: scale(1.05);
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
 
@@ -78,4 +87,13 @@
     height: 250px;
   }
 
+}
+
+.container {
+  overflow-x: hidden;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }

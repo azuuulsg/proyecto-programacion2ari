@@ -20,3 +20,19 @@
     width: 100%;
     height: 100%;
 } 
+
+
+
+.btn-corazon{
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  color: #ff69b4;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-corazon:hover{
+  transform: scale(1.2);
+  color: #ff1493;
+}

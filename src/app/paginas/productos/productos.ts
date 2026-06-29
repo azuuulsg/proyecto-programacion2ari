@@ -1,6 +1,19 @@
+//// Importamos Component para crear
+// un componente Angular.
 import { Component } from '@angular/core';
+//// Importamos la interfaz Producto.
+// Nos permite definir correctamente
+// los datos de cada producto.
 import { Producto } from '../../../models/productos';
+// Importamos RouterLink para poder
+// navegar entre páginas mediante rutas.
 import { RouterLink } from '@angular/router';
+
+// Importamos el servicio carrito.
+import { Carrito } from '../../servicios/carrito';
+
+//Importamos el servicio carrito.
+import { Favoritos } from '../../servicios/favoritos';
 
 @Component({
   selector: 'app-productos',
@@ -9,6 +22,16 @@ import { RouterLink } from '@angular/router';
   styleUrl: './productos.css',
 })
 export class Productos {
+
+  //El constructor permite utilizar los servicios dentro del componente Productos.
+
+  //que es un constru: Es un método que
+  //  Angular ejecuta al crear el componente y sirve para recibir dependencias, como los servicios.
+  constructor(private carritoService: Carrito,
+    private favoritosService: Favoritos
+  ) { }
+
+  //Es un arreglo que contiene varios objetos de tipo Producto.
   Productos: Producto[] = [
     {
       id: 1,
@@ -68,10 +91,69 @@ export class Productos {
       stock: 11,
       imagen: "https://i.pinimg.com/736x/73/2b/12/732b12c99b46df2b06f5be1badea003d.jpg",
       categoria: "almacen",
+      disponibilidad: true, 
+    },
+    {
+      id: 7,
+      nombre: "Paleta de sombras",
+      descripcion: "Sombras oscuras",
+      precio: 5500,
+      stock: 3,
+      imagen: "https://i.pinimg.com/1200x/31/6c/85/316c85dd6ff19c409b9864efc1251f43.jpg",
+      categoria: "almacen",
+      disponibilidad: true,
+    },
+    {
+      id: 8,
+      nombre: "iluminador",
+      descripcion: "iluminador en polvo",
+      precio: 3000,
+      stock: 9,
+      imagen: "https://i.pinimg.com/736x/b7/73/80/b77380b4314f71b9b191701ebc7ac542.jpg",
+      categoria: "almacen",
+      disponibilidad: true,
+    },
+    {
+      id: 9,
+      nombre: "Base liquida",
+      descripcion: "Base Dior",
+      precio: 2500,
+      stock: 5,
+      imagen: "https://i.pinimg.com/736x/d0/3e/a5/d03ea54e4dce667a4aa77a85cd268cbb.jpg",
+      categoria: "almacen",
       disponibilidad: true,
     }
 
+
   ]
+  
+  //Recibe el producto seleccionado.
+  agregarAlCarrito(producto: Producto) {
+    //Lo envía al servicio carrito.
+    this.carritoService.agregar(producto);
+    //Muestra un mensaje.
+    alert(
+      producto.nombre + ' agregado al carrito'
+    );
+  }
+  // Agrega un producto a favoritos.
+ 
+  agregarFavorito(producto: Producto) {
 
+    this.favoritosService.agregar(producto);
+
+    alert(
+      producto.nombre + ' agregado a favoritos '
+    );
+  }
 }
+//por que use un servicio?; Porque necesitaba compartir los productos entre distintos componentes.
+//¿Qué componente utiliza el servicio carrito?; Productos, Ofertas y Carrito.
+//¿Qué componente utiliza favoritos?; Productos y Favoritos.
 
+//productos.ts; Este componente se encarga de mostrar los productos de la tienda. 
+// También permite agregarlos al carrito o a favoritos mediante los servicios correspondientes.
+
+//El componente Productos muestra los productos de la tienda mediante un arreglo de objetos de tipo Producto. Utilicé el servicio Carrito para 
+// agregar productos al carrito y el 
+// servicio Favoritos para guardar productos favoritos. Además, cada acción muestra un mensaje al usuario mediante alert.

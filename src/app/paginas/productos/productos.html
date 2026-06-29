@@ -1,31 +1,47 @@
 <div class="container">
 
-   <!-- <div class="row"> -->
-    @for(p of Productos;track p.id){
+  <!-- <div class="row"> -->
+  <!--Recorremos todo el arreglo Productos.Angular crea una tarjeta por cada producto.-->
+  @for(p of Productos;track p.id){
+    <!--"for: Lo utilicé en productos.html para recorrer el arreglo Productos y 
+    mostrar automáticamente todas las tarjetas."-->
 
-    @if(p.disponibilidad){
+  <!--Solo mostramos los productos que estén disponibles.-->
+  @if(p.disponibilidad){
+  <!--IF; Lo utilicé para mostrar solamente los productos que tienen disponibilidad en true."-->
+  <div class="card col-4 m-4">
+    <img src="{{p.imagen}}" class="card-img-top" alt="...">
 
-    <div class="card col-4 m-4">
-      <img src="{{p.imagen}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5>{{p.nombre}}</h5>
 
-      <div class="card-body">
-        <h5>{{p.nombre}}</h5>
+      <p>${{p.precio}}</p>
 
-        <p>${{p.precio}}</p>
-
-        <p>{{p.descripcion}}</p>
+      <p>{{p.descripcion}}</p>
 
 
-        
-        <a routerLink='/Carrito' class="btn btn-primary">
-         Comprar
-        </a>
+
+      <div class="d-flex align-items-center gap-3">
+
+        <button class="btn btn-primary" (click)="agregarAlCarrito(p)">
+          Comprar
+        </button>
+
+        <button class="btn-corazon" (click)="agregarFavorito(p)">
+          <i class="bi bi-heart"></i>
+        </button>
+
       </div>
     </div>
+  </div>
 
-    }
+  }
 
-    }
+  }
   <!-- </div> -->
 
 </div>
+
+<!--"Cada tarjeta representa un producto. La imagen, nombre, precio y descripción se muestran
+mediante interpolación usando los datos del arreglo Productos. Utilicé Bootstrap para diseñar la tarjeta y Flexbox para acomodar los botones.
+El botón Comprar ejecuta el método agregarAlCarrito() y el botón con el corazón ejecuta agregarFavorito(), enviando el producto seleccionado a los servicios correspondientes."-->

@@ -1,109 +1,70 @@
 <!-- OFERTAS -->
 <section class="ofertas py-5">
-  <div class="container">
-    
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Ofertas Especiales</h2>
-      <p class="text-muted">
-        Aprovecha nuestros productos más vendidos con descuento
-      </p>
-    </div>
 
-    <div class="row g-4 justify-content-center">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Ofertas Especiales</h2>
+    <p class="text-muted">
+      Aprovecha nuestros productos más vendidos con descuento
+    </p>
+  </div>
 
-      <!-- Producto 1 -->
-      <div class="col-md-4">
-        <div class="card oferta-card shadow-lg">
+ <!-- Contenedor de las tarjetas -->
+  <div class="row g-4 justify-content-center">
 
-          <span class="badge-oferta">-20%</span>
+    <!-- Recorremos el arreglo ofertas -->
+    @for (oferta of ofertas; track oferta.nombre) {
 
-          <img src="https://i.pinimg.com/736x/2c/53/30/2c5330a9cb297c3dab62d0ab9e788b5e.jpg"
-               class="card-img-top"
-               alt="Labial">
+    <div class="col-md-4">
 
-          <div class="card-body text-center">
+      <div class="card oferta-card shadow-lg">
 
-            <h5 class="card-title">Labial KiKo</h5>
+        <span class="badge-oferta">
+          {{ oferta.descuento }}
+        </span>
 
-            <p class="precio">
-              <span class="precio-viejo">$6500</span>
-              <span class="precio-nuevo">$5200</span>
-            </p>
+        <img [src]="oferta.imagen" class="card-img-top" [alt]="oferta.nombre">
 
-            <p class="card-text">
-              Labial líquido de larga duración
-            </p>
+        <div class="card-body text-center">
 
-            <a href="#" class="btn btn-pink">
-              Comprar ahora
-            </a>
+          <h5 class="card-title">
+            {{ oferta.nombre }}
+          </h5>
 
-          </div>
+          <p class="precio">
+            <span class="precio-viejo">
+              ${{ oferta.precioViejo }}
+            </span>
+
+            <span class="precio-nuevo">
+              ${{ oferta.precioNuevo }}
+            </span>
+          </p>
+
+          <p class="card-text">
+            {{ oferta.descripcion }}
+          </p>
+          <!--Se ejecuta el método comprar() Se envía la oferta seleccionada.Se crea un producto. Se agrega al carrito.-->
+            <!--Aparece el alert.-->
+          <button class="btn btn-pink" (click)="comprar(oferta)">
+
+            Comprar ahora
+
+          </button>
+
         </div>
-      </div>
 
-      <!-- Producto 2 -->
-      <div class="col-md-4">
-        <div class="card oferta-card shadow-lg">
-
-          <span class="badge-oferta">-15%</span>
-
-          <img src="https://i.pinimg.com/736x/67/1e/ab/671eabb572e5002e82fe90c3eb9f9aba.jpg"
-               class="card-img-top"
-               alt="Rubor">
-
-          <div class="card-body text-center">
-
-            <h5 class="card-title">Rubor Dior</h5>
-
-            <p class="precio">
-              <span class="precio-viejo">$3300</span>
-              <span class="precio-nuevo">$2800</span>
-            </p>
-
-            <p class="card-text">
-              Rubor rosado con acabado natural
-            </p>
-
-            <a href="#" class="btn btn-pink">
-              Comprar ahora
-            </a>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 3 -->
-      <div class="col-md-4">
-        <div class="card oferta-card shadow-lg">
-
-          <span class="badge-oferta">-30%</span>
-
-          <img src="https://i.pinimg.com/736x/73/2b/12/732b12c99b46df2b06f5be1badea003d.jpg"
-               class="card-img-top"
-               alt="Sombras">
-
-          <div class="card-body text-center">
-
-            <h5 class="card-title">Sombras Rosé</h5>
-
-            <p class="precio">
-              <span class="precio-viejo">$4500</span>
-              <span class="precio-nuevo">$3150</span>
-            </p>
-
-            <p class="card-text">
-              Paleta de tonos rosas brillantes
-            </p>
-
-            <a href="#" class="btn btn-pink">
-              Comprar ahora
-            </a>
-
-          </div>
-        </div>
       </div>
 
     </div>
+
+    }
+
   </div>
 </section>
+
+<!--"Este archivo muestra todas las ofertas almacenadas en el arreglo ofertas del componente Ofertas.
+//Utiliza la estructura de control @for para recorrer cada oferta y generar automáticamente una tarjeta con
+//su imagen, nombre, precios, descuento y botón de compra."-->
+
+<!--¿Dónde se generan las tarjetas de las ofertas? "Las tarjetas se generan automáticamente con la estructura @for.
+ Angular recorre el arreglo ofertas definido en ofertas.ts y por cada objeto crea una tarjeta mostrando sus datos."-->
