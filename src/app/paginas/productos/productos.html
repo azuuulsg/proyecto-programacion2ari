@@ -1,10 +1,9 @@
-<div class="container">
+<section class="Productos py-5">
+  <div class="container">
 
-  <!-- <div class="row"> -->
-  <!--Recorremos todo el arreglo Productos.Angular crea una tarjeta por cada producto.-->
-  @for(p of Productos;track p.id){
-    <!--"for: Lo utilicé en productos.html para recorrer el arreglo Productos y 
-    mostrar automáticamente todas las tarjetas."-->
+
+   <!-- <div class="row"> -->
+    @for(p of Productos;track p.id){
 
   <!--Solo mostramos los productos que estén disponibles.-->
   @if(p.disponibilidad){

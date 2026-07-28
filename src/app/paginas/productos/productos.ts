@@ -22,16 +22,6 @@ import { Favoritos } from '../../servicios/favoritos';
   styleUrl: './productos.css',
 })
 export class Productos {
-
-  //El constructor permite utilizar los servicios dentro del componente Productos.
-
-  //que es un constru: Es un método que
-  //  Angular ejecuta al crear el componente y sirve para recibir dependencias, como los servicios.
-  constructor(private carritoService: Carrito,
-    private favoritosService: Favoritos
-  ) { }
-
-  //Es un arreglo que contiene varios objetos de tipo Producto.
   Productos: Producto[] = [
     {
       id: 1,
@@ -124,36 +114,7 @@ export class Productos {
       disponibilidad: true,
     }
 
-
   ]
-  
-  //Recibe el producto seleccionado.
-  agregarAlCarrito(producto: Producto) {
-    //Lo envía al servicio carrito.
-    this.carritoService.agregar(producto);
-    //Muestra un mensaje.
-    alert(
-      producto.nombre + ' agregado al carrito'
-    );
-  }
-  // Agrega un producto a favoritos.
- 
-  agregarFavorito(producto: Producto) {
 
-    this.favoritosService.agregar(producto);
-
-    alert(
-      producto.nombre + ' agregado a favoritos '
-    );
-  }
 }
-//por que use un servicio?; Porque necesitaba compartir los productos entre distintos componentes.
-//¿Qué componente utiliza el servicio carrito?; Productos, Ofertas y Carrito.
-//¿Qué componente utiliza favoritos?; Productos y Favoritos.
 
-//productos.ts; Este componente se encarga de mostrar los productos de la tienda. 
-// También permite agregarlos al carrito o a favoritos mediante los servicios correspondientes.
-
-//El componente Productos muestra los productos de la tienda mediante un arreglo de objetos de tipo Producto. Utilicé el servicio Carrito para 
-// agregar productos al carrito y el 
-// servicio Favoritos para guardar productos favoritos. Además, cada acción muestra un mensaje al usuario mediante alert.
